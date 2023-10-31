@@ -25,9 +25,9 @@ return new class extends Migration
             ->constrained('property_value')
             ->cascadeOnUpdate()
             ->cascadeOnDelete();
-            $table->foreignId('advers_id')
+            $table->foreignId('jobs_id')
             ->nullable()
-            ->constrained('advertisements')
+            ->constrained('jobs')
             ->cascadeOnUpdate()
             ->cascadeOnDelete();
 

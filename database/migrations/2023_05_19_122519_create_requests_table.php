@@ -25,9 +25,9 @@ return new class extends Migration
             ->constrained('companies')
             ->cascadeOnUpdate()
             ->cascadeOnDelete();
-            $table->foreignId('advertisement_id')
+            $table->foreignId('job_id')
             ->nullable()
-            ->constrained('advertisements')
+            ->constrained('jobs')
             ->cascadeOnUpdate()
             ->cascadeOnDelete();
             $table->foreignId('resome_id')

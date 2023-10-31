@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title')->nullable();
             $table->string('price')->nullable();
-            $table->string('number_ads')->nullable();
+            $table->string('number_jobs')->nullable();
             $table->string('description')->nullable();
             $table->string('status')->nullable();
 

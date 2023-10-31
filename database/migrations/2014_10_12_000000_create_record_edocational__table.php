@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('record_edocational', function (Blueprint $table) {7
+        Schema::create('record_edocational', function (Blueprint $table) {
             $table->id();
 
             $table->foreignId('user_id')

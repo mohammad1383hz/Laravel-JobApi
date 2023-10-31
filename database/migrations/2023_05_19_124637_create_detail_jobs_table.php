@@ -13,8 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('detail_ads', function (Blueprint $table) {
+        Schema::create('detail_jobs', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('detail_job_id')
+            ->nullable()
+            ->constrained('detail_jobs')
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
             $table->longtext('gender')->nullable();
             $table->string('educational_degree')->nullable();
             $table->string('price')->nullable();
@@ -23,7 +28,7 @@ return new class extends Migration
 
             $table->timestamps();
         });
-        Schema::create('detail_ad_skill', function (Blueprint $table) {
+        Schema::create('detail_job_skill', function (Blueprint $table) {
             $table->id();
             $table->foreignId('detail_ad_id')
             ->nullable()
