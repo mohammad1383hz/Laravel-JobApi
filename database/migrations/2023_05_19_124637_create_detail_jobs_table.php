@@ -28,11 +28,11 @@ return new class extends Migration
 
             $table->timestamps();
         });
-        Schema::create('detail_job_skill', function (Blueprint $table) {
+        Schema::create('job_skill', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('detail_ad_id')
+            $table->foreignId('job_id')
             ->nullable()
-            ->constrained('detail_ads')
+            ->constrained('jobs')
             ->cascadeOnUpdate()
             ->cascadeOnDelete();
             $table->foreignId('skills_id')

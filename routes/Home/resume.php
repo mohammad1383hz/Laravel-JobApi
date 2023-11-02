@@ -31,3 +31,4 @@ Route::post('/user/complate/profile', [UserController::class,'complateProfile'])
 
 
 
+Route::post('/user/upload/file/', [UserController::class,'uploadFileResume']);

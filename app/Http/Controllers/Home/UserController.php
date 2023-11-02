@@ -61,4 +61,19 @@ class UserController extends Controller
        return response()->json(['success'=>true]);
 
     }
+    public function uploadFileResume(Request $request){
+        $request->validate([
+            'resume' => 'required|mimes:pdf|max:5000', // Validate the file type and size
+        ]);
+        if ($request->hasFile('resume')) {
+            $file = $request->file('resume');
+            $fileName = time().'.'.$file->getClientOriginalExtension();
+            $file->storeAs('public', $fileName); // Save the file to the configured disk
+            return 'File uploaded successfully.';
+        }
+
+        return 'No file uploaded.';
+    }
+    
+
 }
