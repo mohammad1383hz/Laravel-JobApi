@@ -13,14 +13,24 @@ class Job extends Model
     protected $guarded = [];
 
     use HasFactory;
-    public function company(){
-        return $this->BelongsTo(Company::class);
-    }
-    public function requests(){
-        return $this->hasMany(Request::class);
-       }
     public function newEloquentBuilder($query): JobBuilder
     {
         return new JobBuilder($query);
     }
+    public function company(){
+        return $this->BelongsTo(Company::class);
+    }
+    public function category(){
+        return $this->BelongsTo(Category::class);
+    }
+    public function city(){
+        return $this->BelongsTo(City::class);
+    }
+    public function province(){
+        return $this->BelongsTo(province::class);
+    }
+    public function requests(){
+        return $this->hasMany(Request::class);
+       }
+
 }

@@ -12,12 +12,13 @@ class JobController extends Controller
 {
     public function index(Request $request)
     {
+
         //filter by category and city and skill and province and paginate sort and search
         // $ordersType = $request->query('type');
         // $rowsPerPage = $request->query('per_page');
         $jobs = Job::query();
 
-        $rowsPerPage = 1;
+        $rowsPerPage = 10;
         // $rowsPerPage = $request->query('per_page');
 
         $sortBy = request()->query('sort_by');
@@ -42,10 +43,10 @@ class JobController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($advertisement)
+    public function show($job)
     {
-        $advertisement= Advertisement::where('id',$advertisement)->first();
-        return new AdvertisementResource($advertisement);
+        $job= Job::where('id',$job)->first();
+        return new JobResource($job);
     }
 
 

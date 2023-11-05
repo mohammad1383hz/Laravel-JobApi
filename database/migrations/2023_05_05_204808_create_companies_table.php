@@ -24,7 +24,7 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->text('description')->nullable();
             $table->string('password');
-            $table->bigInteger('company_security_id');
+            $table->bigInteger('company_security_id')->nullable();
 
 
 

@@ -23,9 +23,9 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/advertisements', [AdvertisementController::class,'index']);
 Route::middleware('auth:sanctum')->group(function () {
 
-Route::get('request/index', [RequestController::class,'showallrequest']);
+Route::get('user/request', [RequestController::class,'showallrequest']);
 
-Route::post('make/request/{advertisements}', [RequestController::class,'makeRequest']);
+Route::post('make/request/{job}', [RequestController::class,'makeRequest']);
 
 
 // Route::post('/advertisements/{advertisement}', [AdvertisementController::class,'buyPackage']);

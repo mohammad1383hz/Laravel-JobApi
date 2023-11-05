@@ -40,8 +40,13 @@ class User extends Authenticatable
     {
         return $this->hasMany(RecordWork::class);
     }
+    public function Requests()
+    {
+        return $this->hasMany(Request::class);
+    }
     public function RecordEdocationals()
     {
         return $this->hasMany(RecordEdocational::class);
     }
+
 }

@@ -43,7 +43,7 @@ class UserAuthController extends Controller
                 'phone'=>'required',
                 'password' => 'required'
             ]);
-            $user=User::where('phone',$request->phone)->firstorfail();
+            $user=User::where('phone',$request->phone)->first();
             if (!$user){
                 // response false user after enter password
                 return response()->json(['success' => false, 'message' => 851], 200);
@@ -54,15 +54,11 @@ class UserAuthController extends Controller
                    // response false user after enter password
             }else{
                 $token = $user->createToken('auth');
-    //            $token->accessToken->ip = $request->json()->get('ip');
-    //            $token->accessToken->platform = $request->json()->get('platform');
-    //            $token->accessToken->save();
+    //
                 $data = [
                     'token' => $token->plainTextToken,
-    //                'permissions' => auth()->user()->getPermissionNames(),
-    //                'roles' => auth()->user()->getRoleNames(),
+                    'roles'=>''
                 ];
-    //            $user=auth()->attempt($validated);
                 return response()->json($data,201);
 
                }

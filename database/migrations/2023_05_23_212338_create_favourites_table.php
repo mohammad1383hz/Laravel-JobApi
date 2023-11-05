@@ -13,20 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->nullable();
-            $table->string('slug')->nullable();
-            $table->foreignId('parent_id')
+        Schema::create('favourites', function (Blueprint $table) {
+            $table->foreignId('job_id')
             ->nullable()
-            ->constrained('categories')
+            ->constrained('jobs')
             ->cascadeOnUpdate()
             ->cascadeOnDelete();
-
-            $table->string('status')->nullable();
-
-
-            $table->timestamps();
+            $table->foreignId('user_id')
+            ->nullable()
+            ->constrained('users')
+            ->cascadeOnUpdate()
+            ->cascadeOnDelete();
+            $table->text('description')->nullable();
         });
     }
 
@@ -37,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('favourites');
     }
 };

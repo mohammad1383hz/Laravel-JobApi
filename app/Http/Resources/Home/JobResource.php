@@ -16,8 +16,11 @@ class JobResource extends JsonResource
     {
         return [
             'id' => $this->id,
-
-
+            'title' => $this->title,
+            'category' => $this->category['name'],
+            'company' => $this->company['name'],
+            'province' => $this->province['name'],
+            'city' => $this->city['name'],
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

@@ -14,6 +14,7 @@ class JobBuilder extends Builder
     }
     public function whereCategory(?string $category_id): self
     {
+        if ($category_id == null||$category_id == 'null') return $this;
         return $this->where('category_id',$category_id);
     }
 

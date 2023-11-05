@@ -15,4 +15,11 @@ class Request extends Model
     {
         return new RequestBuilder($query);
     }
+    public function company(){
+        return $this->BelongsTo(Company::class);
+    }
+    public function job(){
+        return $this->BelongsTo(Job::class);
+    }
+
 }

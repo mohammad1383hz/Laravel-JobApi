@@ -6,6 +6,7 @@ use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class CompanySeeder extends Seeder
 {
@@ -28,6 +29,8 @@ class CompanySeeder extends Seeder
                 'web_site' => 'https://www.google.com/',
                 'src_logo' => 'test',
                 'status' => 'active',
+                'password' => Hash::make('12345678'),
+
                 'description' => $faker->name,
                 'created_at' => \Carbon\Carbon::now(),
                 'Updated_at' => \Carbon\Carbon::now(),
