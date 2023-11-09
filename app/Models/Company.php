@@ -16,9 +16,9 @@ class Company extends Model
      return $this->belongsToMany(Package::class);
 
     }
-    public function advers(){
+    public function jobs(){
 
-        return $this->hasMany(Advertisement::class);
+        return $this->hasMany(Job::class);
 
        }
        public function requests(){

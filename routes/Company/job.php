@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\CompanyAuthController;
-use App\Http\Controllers\HomeCompany\AdvertisementController;
+use App\Http\Controllers\HomeCompany\JobController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::post('/advertisements', [AdvertisementController::class,'createAds']);
-    Route::get('/company/advertisements', [AdvertisementController::class,'showAdvertisementsCompany']);
-    Route::get('/company/advertisements/{advertisement}', [AdvertisementController::class,'showAdvertisement']);
+    Route::post('/create/jobs', [JobController::class,'createAds']);
+    Route::get('/company/jobs', [JobController::class,'showAdvertisementsCompany']);
+    Route::get('/company/jobs/{job}', [JobController::class,'showAdvertisement']);
 
 });
 //manage advers

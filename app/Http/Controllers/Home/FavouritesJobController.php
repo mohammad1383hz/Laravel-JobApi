@@ -53,5 +53,7 @@ class FavouritesjobController extends Controller
     public function destroy(Favourite $favourite)
     {
         $favourite->delete();
+        return response()->json(['success' => true, 'message' => 851], 200);
+
     }
 }
